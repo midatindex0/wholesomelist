@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply bg-blue;
+        @apply hover:bg-teal;
+        @apply duration-150;
+        @apply text-crust;
+    }
+}

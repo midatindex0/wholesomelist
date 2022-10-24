@@ -11,7 +11,7 @@
 		property="og:description"
 	/>
 	<meta content="https://wholesomelist.vercel.app/" property="og:url" />
-	<meta content="https://wholesomelist.vercel.app/dreamh.png" property="og:thumbnail" />
+	<meta content="https://wholesomelist.vercel.app/dreamh.png" property="og:image" />
 </svelte:head>
 
 <section>

@@ -17,10 +17,9 @@
 </script>
 
 <div
-	class="rounded-lg hover:-translate-y-2 duration-200"
-	style="background-image: url('{entry.image}');"
+	class="rounded-lg hover:-translate-y-2 duration-200 bg-mantle"
 >
-	<div class="p-2 md:p-5 rounded-lg flex backdrop-blur-sm backdrop-brightness-[40%]">
+	<div class="p-2 md:p-5 rounded-lg flex">
 		<img
 			class="rounded-lg w-[100px] md:w-[250px]"
 			src={entry.image}

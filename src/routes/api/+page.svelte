@@ -499,7 +499,7 @@
 			</div>
 			<div class="my-2">
 				<span class="text-red font-bold px-2 py-1 bg-surface0 rounded">pl</span>: Only entries with
-				pages greater than (default: 10000)
+				pages less than (default: 10000)
 			</div>
 			<div class="my-2">
 				<span class="text-red font-bold px-2 py-1 bg-surface0 rounded">parody</span>: Only entries
@@ -698,7 +698,7 @@
 			</div>
 			<div class="my-2">
 				<span class="text-red font-bold px-2 py-1 bg-surface0 rounded">pl</span>: Only entries with
-				pages greater than (default: 10000)
+				pages less than (default: 10000)
 			</div>
 			<div class="my-2">
 				<span class="text-red font-bold px-2 py-1 bg-surface0 rounded">parody</span>: Only entries

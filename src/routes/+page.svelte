@@ -4,7 +4,6 @@
 	import Entry from '$lib/components/Entry.svelte';
 
 	import * as scroll from 'svelte-scrollto';
-	import { flip } from 'svelte/animate';
 	import MiniSearch from 'minisearch';
 	import { onMount } from 'svelte';
 	import { page as sveltePage } from '$app/stores';

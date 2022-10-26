@@ -41,7 +41,6 @@
 				changePage = page;
 			}
 			if (lookup) {
-				window.history.pushState('', '', `/?page=${page}&q=${query}`);
 			}
 		}
 	}
@@ -58,7 +57,6 @@
 				page = 1;
 				table = table;
 			}
-			window.history.pushState('', '', `/?page=${page}&q=${query}`);
 		}
 	}
 
@@ -85,9 +83,7 @@
 <div class="mx-3 md:mx-10 flex relative items-center">
 	<button class="px-3 py-2 btn rounded"><i class="fa-solid fa-gear" /></button>
 	<div class="mx-2 text-sm text-subtext0 text-center">
-		{(page - 1) * perPage + 1}-{page * perPage > table.length
-			? table.length
-			: page * perPage}
+		{(page - 1) * perPage + 1}-{page * perPage > table.length ? table.length : page * perPage}
 		of {table.length} (out of {list.table.length})
 	</div>
 	<div class="flex-grow" />

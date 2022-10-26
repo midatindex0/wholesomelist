@@ -7,6 +7,7 @@
 	import MiniSearch from 'minisearch';
 	import { onMount } from 'svelte';
 	import { page as sveltePage } from '$app/stores';
+	import { fade } from 'svelte/transition'
 
 	let perPage = 10;
 	let visible = [];
@@ -16,6 +17,7 @@
 	let miniSearch;
 	let query = $sveltePage.url.searchParams.get('q') ?? '';
 	let lookup;
+	let showOptions = false;
 
 	onMount(() => {
 		miniSearch = new MiniSearch({
@@ -81,7 +83,12 @@
 </div>
 <div class="my-5" />
 <div class="mx-3 md:mx-10 flex relative items-center">
-	<button class="px-3 py-2 btn rounded"><i class="fa-solid fa-gear" /></button>
+	<button
+		on:click={() => {
+			showOptions = !showOptions;
+		}}
+		class="px-3 py-2 btn rounded"><i class="fa-solid fa-gear" /></button
+	>
 	<div class="mx-2 text-sm text-subtext0 text-center">
 		{(page - 1) * perPage + 1}-{page * perPage > table.length ? table.length : page * perPage}
 		of {table.length} (out of {list.table.length})
@@ -95,6 +102,12 @@
 	<i class="fa-solid fa-magnifying-glass rounded-r p-3 absolute right-0" />
 </div>
 
+{#if showOptions}
+	<div transition:fade class="mx-3 md:mx-10 mt-5">
+		<div>Show <input bind:value={perPage} class="rounded p-2 text-center w-10 bg-crust" type="text"> entries</div>
+		<div class="text-center">----TODO----</div>
+	</div>
+{/if}
 <div id="scroll-anchor" />
 {#each visible as entry (entry.id)}
 	<div class="mx-3 md:mx-10 my-5">

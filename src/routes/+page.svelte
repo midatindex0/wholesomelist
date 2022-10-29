@@ -7,7 +7,7 @@
 	import MiniSearch from 'minisearch';
 	import { onMount } from 'svelte';
 	import { page as sveltePage } from '$app/stores';
-	import { fade } from 'svelte/transition'
+	import { fade } from 'svelte/transition';
 
 	let perPage = 10;
 	let visible = [];
@@ -18,6 +18,33 @@
 	let query = $sveltePage.url.searchParams.get('q') ?? '';
 	let lookup;
 	let showOptions = false;
+
+	let filterMap = {
+		data: [
+			'Query',
+			'Title',
+			'Link',
+			'Author',
+			'Tier',
+			'Pages',
+			'Note',
+			'Parody',
+			'Tag',
+			'Site Tag',
+			'Character'
+		],
+		condition: {
+			Query: ['Matches', 'Does not match'],
+			Title: ['Does not start with', 'Contains', 'Does not contain', 'Does not end with'],
+			Link: ['Does not start with', 'Contains', 'Does not contain', 'Does not end with'],
+			Author: ['Does not start with', 'Contains', 'Does not contain', 'Does not end with'],
+			Tier: ['Equals', 'Above or Equal to', 'Below or Equal to', 'Not Equal to'],
+			Pages: ['Greater than', 'Less than'],
+			Note: ['Does not start with', 'Contains', 'Does not contain', 'Does not end with'],
+			Tag: ['Has Tag', 'Does not have tag']
+		}
+	};
+	let filter = [];
 
 	onMount(() => {
 		miniSearch = new MiniSearch({
@@ -104,7 +131,9 @@
 
 {#if showOptions}
 	<div transition:fade class="mx-3 md:mx-10 mt-5">
-		<div>Show <input bind:value={perPage} class="rounded p-2 text-center w-10 bg-crust" type="text"> entries</div>
+		<div>
+			Show <input bind:value={perPage} class="rounded p-2 text-center w-10 bg-crust" type="text" /> entries
+		</div>
 		<div class="text-center">----TODO----</div>
 	</div>
 {/if}

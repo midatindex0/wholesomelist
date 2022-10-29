@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import analytics from '$lib/analytics.js';
 </script>
 
 <svelte:head>
